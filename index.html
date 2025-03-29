@@ -3,41 +3,408 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TarotSphere Support</title>
+    <title>Technical Support - TarotSphere</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background-color: #4A148C; color: white; padding: 10px 0; text-align: center; }
-        nav { background-color: #7B1FA2; padding: 10px; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; }
-        main { padding: 20px; }
-        footer { background-color: #4A148C; color: white; text-align: center; padding: 10px 0; position: fixed; width: 100%; bottom: 0; }
+        :root {
+            --primary-color: #9c27b0;
+            --secondary-color: #3f51b5;
+            --dark-bg: #1a1025;
+            --light-text: #f8f8f8;
+            --gray-text: #b0b0b0;
+            --card-bg: rgba(0, 0, 0, 0.3);
+            --border-color: rgba(156, 39, 176, 0.3);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--light-text);
+            background: linear-gradient(135deg, #0d071a 0%, #150a29 50%, #1e0d3b 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 1.4rem;
+            margin: 30px 0 15px;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+        
+        p, ul, ol {
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .policy-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .policy-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .updated-date {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            margin-top: 40px;
+        }
+        
+        .language-selector {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        
+        .language-selector a {
+            color: var(--primary-color);
+            margin-left: 15px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .language-selector a:hover {
+            text-decoration: underline;
+        }
+        
+        .support-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .support-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-card {
+            flex: 1;
+            min-width: 200px;
+            background-color: rgba(63, 81, 181, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--secondary-color);
+            text-align: center;
+        }
+        
+        .contact-card i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(156, 39, 176, 0.4);
+        }
+        
+        .tutorial {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .tutorial-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .tutorial-content {
+            flex-grow: 1;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .support-section {
+                padding: 20px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+            
+            .contact-methods {
+                flex-direction: column;
+            }
+        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>TarotSphere Support</h1>
-    </header>
-    <nav>
-        <a href=" ">FAQ</a >
-        <a href="#contact">Contact Us</a >
-        <a href="#resources">Resources</a >
-    </nav>
-    <main>
-        <section id="faq">
-            <h2>Frequently Asked Questions</h2>
-            <p>Find answers to common questions about TarotSphere.</p >
-        </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Need help? Reach out to our support team.</p >
-        </section>
-        <section id="resources">
-            <h2>Resources</h2>
-            <p>Explore guides and tutorials to make the most of TarotSphere.</p >
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 TarotSphere. All rights reserved.</p >
-    </footer>
+    <div class="container">
+        <div class="language-selector">
+            <a href="#" onclick="switchLanguage('en')">English</a>
+            <a href="#" onclick="switchLanguage('zh')">中文</a>
+        </div>
+        
+        <header>
+            <div class="logo">TarotSphere</div>
+            <h1>Technical Support</h1>
+            <p>We're here to help with your TarotSphere experience</p>
+        </header>
+        
+        <div class="support-section" id="getting-started">
+            <h2>1. Getting Started</h2>
+            <p>Welcome to TarotSphere, your daily tarot divination app with beautiful animations and insightful interpretations. Here's how to begin your journey:</p>
+            
+            <div class="tutorial">
+                <div class="tutorial-number">1</div>
+                <div class="tutorial-content">
+                    <p><strong>Choose a Spread</strong> - Select from multiple tarot spreads: Single Card for quick guidance, Three Card for past-present-future readings, or Celtic Cross for comprehensive insights.</p>
+                </div>
+            </div>
+            
+            <div class="tutorial">
+                <div class="tutorial-number">2</div>
+                <div class="tutorial-content">
+                    <p><strong>Set Your Intention</strong> - Enter your question or focus for the reading to help guide the energy of the cards.</p>
+                </div>
+            </div>
+            
+            <div class="tutorial">
+                <div class="tutorial-number">3</div>
+                <div class="tutorial-content">
+                    <p><strong>Shuffle & Draw</strong> - Experience our beautiful card shuffling animations and draw your cards.</p>
+                </div>
+            </div>
+            
+            <div class="tutorial">
+                <div class="tutorial-number">4</div>
+                <div class="tutorial-content">
+                    <p><strong>Interpret Your Reading</strong> - Read detailed interpretations for each card and how they interact in your spread.</p>
+                </div>
+            </div>
+            
+            <div class="tutorial">
+                <div class="tutorial-number">5</div>
+                <div class="tutorial-content">
+                    <p><strong>Save Your Reading</strong> - Store important readings in your history to review insights later.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="support-section" id="faq">
+            <h2>2. Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I access my past readings?</div>
+                <p>Navigate to the History tab from the main menu. Here you'll find all your saved readings organized by date. Tap on any reading to view the complete details.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What does it mean when a card appears reversed?</div>
+                <p>Reversed cards often represent blocked or inverted energies of the card's upright meaning. Our app provides specific interpretations for both upright and reversed positions.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I get AI interpretation for my readings?</div>
+                <p>AI interpretations are available with our premium subscription. After drawing your cards, tap the "AI Reading" button to receive personalized insights based on your specific question and cards.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I customize the app appearance?</div>
+                <p>Yes! Go to Settings and select "Appearance" to change themes, card backs, and other visual elements of the app.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I cancel or manage my subscription?</div>
+                <p>Subscriptions are managed through your Apple ID. Go to your iPhone's Settings > [Your Name] > Subscriptions, find TarotSphere, and manage your subscription options there.</p>
+            </div>
+        </div>
+        
+        <div class="support-section" id="troubleshooting">
+            <h2>3. Troubleshooting</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">The app is crashing or freezing</div>
+                <p>Try these steps in order:</p>
+                <ol>
+                    <li>Close the app completely and restart it</li>
+                    <li>Restart your device</li>
+                    <li>Check for app updates in the App Store</li>
+                    <li>Make sure your iOS is updated to the latest version</li>
+                    <li>If problems persist, try uninstalling and reinstalling the app (your reading history is backed up to iCloud if enabled)</li>
+                </ol>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">My saved readings are missing</div>
+                <p>If you've enabled iCloud sync in Settings, make sure you're signed in to the same Apple ID and have iCloud enabled for TarotSphere. If not using iCloud, readings are stored locally and may be lost if the app is uninstalled.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">AI interpretations are unavailable</div>
+                <p>Check your internet connection, as AI features require an active connection. Also verify that your subscription is active by going to the Subscription page in the app.</p>
+            </div>
+        </div>
+        
+        <div class="support-section" id="subscription">
+            <h2>4. Subscription Information</h2>
+            <p>TarotSphere offers both free and premium features:</p>
+            
+            <h3>Free Features:</h3>
+            <ul>
+                <li>Single Card daily readings</li>
+                <li>Basic card interpretations</li>
+                <li>Limited reading history</li>
+            </ul>
+            
+            <h3>Premium Features:</h3>
+            <ul>
+                <li>All tarot spreads (Three Card, Celtic Cross, and more)</li>
+                <li>AI-powered personalized interpretations</li>
+                <li>Unlimited reading history</li>
+                <li>Advanced card meanings and relationship interpretations</li>
+                <li>No advertisements</li>
+            </ul>
+            
+            <p>For subscription issues, payment problems, or refund requests, please contact our support team.</p>
+            <a href="#contact" class="btn">Contact Support</a>
+        </div>
+        
+        <div class="support-section" id="contact">
+            <h2>5. Contact Us</h2>
+            <p>Our support team is ready to assist you with any questions or issues you may encounter with TarotSphere.</p>
+            
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Support</h3>
+                    <p>support@tarotsphere.com</p>
+                    <p>Response within 24 hours</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-comment-dots"></i>
+                    <h3>In-App Support</h3>
+                    <p>Go to Settings > Help & Support</p>
+                    <p>Direct messaging with our team</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 20px;">When contacting support, please include:</p>
+            <ul>
+                <li>Your device model and iOS version</li>
+                <li>App version (found in Settings > About)</li>
+                <li>Detailed description of your issue</li>
+                <li>Screenshots if applicable</li>
+            </ul>
+        </div>
+        
+        <p class="updated-date">Last updated: May 2023</p>
+    </div>
+    
+    <script>
+        function switchLanguage(lang) {
+            // This is a placeholder for language switching functionality
+            // In a real implementation, this would load translated content
+            if (lang === 'zh') {
+                alert('切换到中文版本');
+                // Add code to switch to Chinese version
+            } else {
+                alert('Switched to English version');
+                // Add code to switch to English version
+            }
+        }
+    </script>
 </body>
-</html>
+</html> 
